@@ -1,0 +1,227 @@
+/* Cấu trúc cơ bản */
+body {
+  background-color: #f6f4f2; /* Màu nền của trang */
+  font-family: Verdana, sans-serif; /* Font chữ mặc định */
+  margin: 0; /* Loại bỏ khoảng cách ngoài của body */
+  padding: 0; /* Loại bỏ khoảng cách bên trong của body */
+}
+
+/* Header */
+.minifb-header {
+  display: flex; /* Flexbox cho các phần tử con sắp xếp theo hàng ngang */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  justify-content: space-between; /* Phân phối khoảng cách đều giữa các phần tử */
+  width: 100%; /* Chiều rộng của header chiếm toàn bộ chiều rộng */
+  height: 90px; /* Chiều cao của header */
+  background-color: #ffffff; /* Màu nền của header */
+  color: #3d5b99; /* Màu chữ trong header */
+  border-bottom: 1px solid #dddfe2; /* Đường viền dưới header */
+  padding: 0 15px; /* Khoảng cách bên trong từ hai bên */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ dưới header */
+  box-sizing: border-box; /* Bao gồm padding và border trong chiều rộng */
+}
+
+/* Tiêu đề */
+.minifb-header h1 {
+  margin: 0; /* Loại bỏ khoảng cách ngoài của tiêu đề */
+  font-size: 24px; /* Kích thước chữ của tiêu đề */
+}
+
+/* Form Container */
+.minifb-form-container {
+  display: flex; /* Flexbox cho các phần tử con trong form container */
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  margin-right: 20%; /* Khoảng cách từ form đến lề bên phải */
+}
+
+/* Form */
+form {
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  gap: 10px; /* Khoảng cách giữa các phần tử trong form */
+  background: #ffffff; /* Màu nền của form */
+  border: 1px solid #dddfe2; /* Đường viền của form */
+  border-radius: 8px; /* Bo tròn các góc của form */
+  padding: 10px; /* Khoảng cách bên trong form */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bóng đổ dưới form */
+}
+
+.minifb-form-group-login {
+  margin-bottom: 0; /* Loại bỏ khoảng cách dưới nhóm phần tử */
+  border: 0;
+}
+
+.minifb-form-group-login input {
+  width: 150px; /* Chiều rộng của các trường nhập liệu */
+  padding: 8px; /* Khoảng cách bên trong trường nhập liệu */
+  border: 1px solid #dddfe2; /* Đường viền của trường nhập liệu */
+  border-radius: 5px; /* Bo tròn các góc của trường nhập liệu */
+  font-size: 14px; /* Kích thước chữ trong trường nhập liệu */
+  background-color: #f2f3f5; /* Màu nền của trường nhập liệu */
+}
+
+.submit-btn {
+  padding: 10px 20px; /* Khoảng cách bên trong nút bấm */
+  border: none; /* Không có đường viền cho nút bấm */
+  border-radius: 5px; /* Bo tròn các góc của nút bấm */
+  color: white; /* Màu chữ của nút bấm */
+  background-color: #5b7bc0; /* Màu nền của nút bấm */
+  font-size: 17px; /* Kích thước chữ của nút bấm */
+  cursor: pointer; /* Con trỏ chuột thay đổi thành tay khi di chuột qua nút bấm */
+  transform: scale(1); /* Kích thước nút bấm ở trạng thái bình thường */
+  transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu nền và kích thước chữ khi di chuột qua */
+}
+
+.submit-btn:hover {
+  background-color: #3a5a8d; /* Màu nền của nút bấm khi di chuột qua (xanh đậm hơn) */
+  transform: scale(1.05); /* Tăng kích thước nút bấm mà không làm xê dịch */
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .minifb-header {
+    flex-direction: column; /* Chuyển header thành cột khi màn hình nhỏ */
+    align-items: flex-start; /* Căn chỉnh các phần tử con bên trái */
+    padding: 10px;
+  }
+
+  .minifb-form-container {
+    margin-right: 0; /* Loại bỏ khoảng cách bên phải khi màn hình nhỏ */
+    width: 100%; /* Đảm bảo form chiếm toàn bộ chiều rộng của header */
+    justify-content: center; /* Căn giữa form trong header */
+  }
+}
+.login-fb {
+  display: flex; /* Flexbox cho các phần tử trong form */
+  box-shadow: none; /* Loại bỏ bóng đổ */
+  border: none;
+}
+.login-fb label {
+  display: none; /* Ẩn nhãn (label) */
+}
+
+/* Register */
+/* Container chính */
+.minifb-body {
+  display: flex; /* Sử dụng flexbox để căn chỉnh các phần tử con theo hàng ngang */
+  justify-content: space-between; /* Phân phối khoảng cách đều giữa các phần tử con */
+  align-items: flex-start; /* Căn chỉnh các phần tử con theo chiều dọc */
+
+  margin: auto; /* Căn giữa container */
+}
+/* Container chính */
+.register-container {
+  width: 100%; /* Chiếm toàn bộ chiều rộng */
+  max-width: 400px; /* Chiều rộng tối đa */
+  padding: 10px; /* Khoảng cách bên trong */
+  margin-right: 20%;
+}
+
+/* Nhóm phần tử trong form */
+.minifb-form-group {
+  margin-bottom: 15px; /* Khoảng cách dưới mỗi nhóm phần tử */
+}
+
+/* Nhãn (label) */
+.minifb-form-group label {
+  display: block; /* Hiển thị dưới dạng khối */
+  font-size: 14px; /* Kích thước chữ của nhãn */
+  color: #333; /* Màu chữ */
+  margin-bottom: 5px; /* Khoảng cách dưới nhãn */
+}
+
+/* Trường nhập liệu (input) */
+.minifb-form-group input {
+  width: 100%; /* Chiếm toàn bộ chiều rộng của nhóm phần tử */
+  max-width: 100%; /* Đảm bảo trường nhập liệu không vượt quá chiều rộng của nhóm phần tử */
+  padding: 10px; /* Khoảng cách bên trong trường nhập liệu */
+  border: 1px solid #dddfe2; /* Đường viền mỏng xám */
+  border-radius: 5px; /* Bo tròn các góc của trường nhập liệu */
+  font-size: 14px; /* Kích thước chữ trong trường nhập liệu */
+  background-color: #f2f3f5; /* Màu nền sáng */
+  box-sizing: border-box; /* Bao gồm padding và border trong tổng chiều rộng */
+}
+
+/* Nút đăng ký */
+.register-btn {
+  width: 100%; /* Chiếm toàn bộ chiều rộng của container */
+  padding: 10px; /* Khoảng cách bên trong nút bấm */
+  border: none; /* Không có đường viền cho nút bấm */
+  border-radius: 5px; /* Bo tròn các góc của nút bấm */
+  color: white; /* Màu chữ của nút bấm */
+  background-color: #1877f2; /* Màu nền giống Facebook */
+  font-size: 16px; /* Kích thước chữ của nút bấm */
+  cursor: pointer; /* Con trỏ chuột thay đổi thành tay khi di chuột qua nút bấm */
+  transition: background-color 0.3s, transform 0.3s; /* Hiệu ứng chuyển màu nền khi di chuột qua */
+}
+
+/* Hiệu ứng khi di chuột qua nút bấm */
+.register-btn:hover {
+  background-color: #3a5a8d; /* Màu nền của nút bấm khi di chuột qua */
+  transform: scale(1.02); /* Tăng kích thước nút bấm mà không làm xê dịch */
+}
+
+/* Ghi chú dưới trường nhập liệu */
+.note {
+  font-size: 12px; /* Kích thước chữ của ghi chú */
+  color: #1515a0; /* Màu chữ ghi chú */
+  margin-top: 5px; /* Khoảng cách trên ghi chú */
+}
+.minifb-footer {
+  background-color: #ffffff;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+}
+
+.minifb-form-group {
+  margin-bottom: 15px;
+}
+
+.error-msg {
+  display: none;
+  color: rgb(184, 39, 39); /* Màu chữ đỏ */
+  font-size: 12px; /* Kích thước chữ nhỏ */
+  margin: 0; /* Khoảng cách trên và dưới */
+}
+.error-message {
+  color: red;
+  margin-top: 10px; /* Điều chỉnh khoảng cách trên tùy ý */
+}
+.notification {
+    display: none;           /* Ẩn phần tử theo mặc định */
+    padding: 10px;          /* Thêm khoảng cách bên trong phần tử (padding) là 10px từ tất cả các cạnh */
+    background-color: #21d44b; /* Đặt màu nền của phần tử là màu đỏ (#f44336) */
+    color: white;           /* Đặt màu chữ của phần tử là màu trắng */
+    margin: 10px 0;         /* Thêm khoảng cách bên ngoài phần tử (margin) 10px trên và dưới, không thay đổi trái và phải */
+    position: fixed;        /* Đặt vị trí của phần tử là cố định trên trang, di chuyển cùng với cuộn trang */
+    top: 20px;              /* Đặt khoảng cách từ cạnh trên của cửa sổ trình duyệt đến phần tử là 20px */
+    right: 20px;            /* Đặt khoảng cách từ cạnh phải của cửa sổ trình duyệt đến phần tử là 20px */
+    z-index: 1000;          /* Đặt độ ưu tiên hiển thị của phần tử (z-index) là 1000, đảm bảo nó nằm trên các phần tử khác */
+  }
+  
+  .notification.show {
+    display: block;         /* Khi phần tử có lớp `show`, thay đổi thuộc tính `display` thành `block` để hiển thị phần tử */
+  }

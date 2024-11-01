@@ -1,0 +1,326 @@
+:root {
+--blue:#3498db;
+--dark-blue:#2980b9;
+--red:#e74c3c;
+--light-bg:#eee;
+--white:#fff;
+--box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    font-family: 'popins',sans-serif;
+
+}
+.container{
+    min-height: 100vh;   /*viewport height (chiều cao của cửa sổ trình duyệt); */
+    display:flex;
+    align-items: center;/*align-items: center; cho một flex container, tất cả các phần tử con của nó sẽ được căn giữa theo chiều dọc bên trong container.*/
+    justify-content: center; /* canh giữa flex */
+    padding:20px;
+}
+.container .users{
+    padding:20px;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    width: 400px;
+    border-radius: 5px;
+}
+.container .users .profile{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.content img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;/* lấp đầy khung chứ mà không bị bop méo(cắt bớt)*/
+}
+ header .content{
+    display: flex;
+    align-items: center;
+}
+header .content .details{
+color : #000;
+margin-left: 10px;
+}
+header .content span{
+    font-size:18px;
+    font-weight: 500;
+}
+header .home{
+    display: block;
+    background: var(--blue);
+    color: var(--white);
+    padding:7px 15px;
+    text-decoration: none;/* để loại bỏ các hiệu ứng trang trí văn bản mặc định*/
+    border-radius: 5px;
+}
+header .home:hover{
+    background: var(--dark-blue);
+
+}
+.users .search{
+    margin: 20px 0;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
+.users .search input{
+    height: 42px;
+    width: calc(100% - 50px);
+    font-size: 16px;
+    background: var(--light-bg);
+    padding: 0 13px;
+    border-radius:  5px 0 0 5px ;
+}
+.users .search button{
+    height: 42px;
+    width: 55px;
+    cursor: pointer;
+    border: none;
+    background: var(--blue);
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+}
+.users .search button:hover{
+    background: var(--dark-blue);
+}
+
+.all-users{
+    max-height: 350px;
+    overflow-y: auto;
+}
+.all-users::-webkit-scrollbar{ /*ẩn thanh cuộn */
+    width: 0;
+}
+.all-users .content{
+    display: flex;
+    align-items: center;
+}
+.all-users .details{
+    color: #000;
+    margin-left: 10px;
+
+}
+.all-users a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    padding-right: 15px;
+    
+}
+.all-users a:last-child{
+    margin-bottom: 0;
+}
+.all-users a .status-dot {
+    background: green;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%; /* Tạo hình tròn hoàn hảo */ 
+}
+.all-users a .status-dot.offline {
+    background: #ccc;
+}
+
+a.back-icon img{
+    height: 40px;
+}
+
+/* chat area */
+
+.chat-area{
+    max-width: 450px;
+    width: 100%; /* khi phần tử chứa nhỏ hơn 450 thì 100% phần tử chứa */
+    background: var(--blue);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow)
+}
+
+.chat-area header {
+    display: flex;
+    align-items: center;
+    padding: 18px 30px;
+   
+}
+.chat-area .back-icon img {
+    height: 20px;
+    width: 25px;
+}
+.chat-area header img{
+    height: 45px;
+    width: 45px;
+    margin: 0 5px;
+    border-radius: 50%;
+}
+.chat-box{
+    position: relative;
+    height: 100%;
+    min-height: 420px;
+    max-height: 420px; /* ổn định kích thước */
+    overflow-y: auto;
+    padding: 10px 30px 20px 30px;
+    background: #f7f7f7;
+    box-shadow: 0 32px 32px -32px rgb(0 0 0 / 5%),
+                0 -32px 32px -32px rgb(0 0 0 / 5%);
+}
+.chat-box .text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: absolute;
+    gap: 10px; /* tạo khoảng cách các phần tử trong gird */
+    left:50%;
+    top : 30%;
+    width: calc(100% - 50px);
+    text-align: center;
+    transform: translate(-50%,-50%); /* chèn giữa */
+}
+.chat-box::-webkit-scrollbar{
+    width: 0;
+}
+
+.chat-box .text img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.chat-box .chat{
+    margin: 15px 0;
+    border-radius:16px;
+    box-shadow: 0 32px 32px -32px rgb(0 0 0 / 5%),
+    0 -32px 32px -32px rgb(0 0 0 / 5%);
+    width: 100%;
+    background: var(--white);
+}
+.chat-box .chat p{
+    word-wrap: break-word; /*trình duyệt sẽ tự động ngắt từ và xuống dòng*/
+    padding: 18px 16px;
+    box-shadow:  0px 0px 32px  rgb(0 0 0 / 5%),
+                    0rem  16px 16px -16px rgb(0 0 0 / 10%);
+}
+.chat-box .outgoing{
+    display: flex; /* sắp xếp và nó bỏ những cái thẻ xung quanh trái và phải thẻ p */
+    
+}
+.chat-box .outgoing .details{
+    margin-left: auto;
+    max-width: calc(100% - 130px);
+}
+.outgoing .details p{
+    background: var(--blue);
+    color: var(--white);
+    border-radius: 18px 18px 0 18px;
+}
+.outgoing .details img {
+    height: 150px;
+    width: 100px;
+}
+.chat-box .incoming{
+    display: flex;
+    align-items: flex-end; /*căn bên dưới */
+
+}
+.incoming img{
+    height: 40px;
+    width: 40px;
+    object-fit: cover; /* cắt bỏ cho vừa */
+    border-radius: 50%;
+}
+.incoming .details img {
+    height: 150px;
+    width: 100px;
+    border-radius: 0;
+}
+.incoming .details{
+    margin-right: auto;
+    margin-left: 10px;
+    max-width: calc(100% - 130px);
+}
+.incoming .details p{
+    background:  var(--dark-blue);
+    color: var(--white);
+    border-radius: 18px 18px 18px 0;
+}
+.typing-area{
+    padding : 18px 30px;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    background: var(--white);
+}
+.typing-area input{
+    height: 45px;
+    width: calc(100% - 58px);  
+    font-size: 16px;
+    padding: 0 13px;
+    background: var(--light-bg);
+    border-radius: 5px 0 0 5px;
+}
+.typing-area .image{
+    width: 50px;
+    background: transparent;
+    cursor: pointer;
+}
+.typing-area .image img{
+    height:  2em; /* 32px */
+    width: 2em;
+}
+.typing-area .send_btn{
+    width: 55px;
+    background: var(--blue);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    opacity: 0.7; /* làm mờ */
+    pointer-events: none;
+}
+.typing-area .send_btn.active{
+    opacity: 1; /* làm rõ */
+    pointer-events: auto;  /* Khi .active được thêm, nút có thể nhấn được */
+}
+.typing-area .send_btn img{
+    height: 45px;
+    background: transparent;
+    border-radius: 50%;
+}
+
+@media(max-width:650px){
+    .container{
+        height: 100%;
+        width: 100%;
+        top:0; left : 0; right: 0;
+        padding: 0;
+        display: block;
+        overflow-y: hidden;
+    }
+    .container .users{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    .container .chat-box{
+        position: absolute;
+        left: 0;right: 0;
+        min-height: 100%;
+        max-width: 100%;
+    }
+    .typing-area{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background: var(--white);
+
+    }
+    
+}
